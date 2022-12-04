@@ -1,0 +1,18 @@
+
+.Cards {
+    height: 250px;
+    width: 175px;
+    border: 2px solid black;
+    margin: 20px;
+  }
+  .cardsBox{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  p{
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  
