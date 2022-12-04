@@ -1,0 +1,80 @@
+import React, { useState } from 'react'
+
+export default function AddRestaurant() {
+    const [name, setName] = useState("")
+    const [description, setDescription] = useState("")
+    const [cuisine, setCuisine] = useState("")
+    const [veganOptions, setVeganOptions] = useState(true)
+    const [takeOut, setTakeOut] = useState(true)
+    const [priceRange, setPriceRange] = useState(1)
+
+    const toBoolean = (str) => {
+        return str == 'true' ? true : false
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        console.log(JSON.stringify({
+            name: name,
+            description: description,
+            cuisine: cuisine,
+            veganOptions: veganOptions,
+            takeOut: takeOut,
+            priceRange: priceRange
+        }))
+        // try {
+        //     let res = await fetch("https://httpbin.org/post", {
+        //         method: "POST",
+        //         body: JSON.stringify({
+        //             name: name,
+        //             description: description,
+        //             cuisine: cuisine,
+        //             veganOptions: veganOptions,
+        //             takeOut: takeOut,
+        //             priceRange: priceRange
+        //         }),
+        //     })
+        //     let resJson = await res.json()
+        //     res.status === 200 ? console.log('restaurant submitted') : console.log('something went wrong')
+        // } catch (err) {
+        //     console.log(err)
+        // }
+    }
+    return (
+        <div>
+            <h2>Add a restaurant to the guide:</h2>
+            <form onSubmit={handleSubmit}>
+                <label for="name">Restaurant name:</label>
+                <input type="text" id="name" name="name" onChange={(e) => setName(e.target.value)} />
+                <br />
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" onChange={(e) => setDescription(e.target.value)} />
+                <br />
+                <label for="cuisine">Cuisine:</label>
+                <input type="text" id="cuisine" name="cuisine" onChange={(e) => setCuisine(e.target.value)} />
+                <br />
+                <p>Vegan options:</p>
+                <select name="veganOptions" onChange={(e) => setVeganOptions(toBoolean(e.target.value))}>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <p>Offers Take-Out:</p>
+                <select name="takeOut" onChange={(e) => setTakeOut(toBoolean(e.target.value))}>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <p>Price Range:</p>
+                <select name="priceRange" onChange={(e) => setPriceRange(parseInt(e.target.value))}>
+                    <option value="1">$</option>
+                    <option value="2">$$</option>
+                    <option value="3">$$$</option>
+                    <option value="4">$$$$</option>
+                </select>
+                <br /><br />
+                <input type="submit" />
+            </form>
+        </div>
+    )
+}
+
+//https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/

@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Aubergine",
+        "description": "Eat better, feel different. Aubergine Kitchen is a family-owned restaurant focused on making healthy eating easy, convenient, and sustainable.",
+        "cuisine": "Brazilian",
+        "veganOptions": true,
+        "takeOut": true,
+        "priceRange": 3
+    },
+    {
+        "name": "Puro Peru",
+        "description": "Taste something new at Puro Peru, the best restaurant in Sandy, UT, for authentic Peruvian cuisine. We bring the fiesta to our community with classic Peruvian dishes, live entertainment, and hard-to-beat prices. Whether you're in the mood for creamy chicken chili or smoky beef stew, our menu is packed with delicious and original recipes you won't want to miss out on. Let us make dinner tonight; take a trip to our Peruvian restaurant and give yourself a dining experience to remember.",
+        "cuisine": "Peruvian",
+        "takOut": true,
+        "priceRange": 3
+    },
+    {
+        "name": "Life Alive",
+        "description": "Organic, plant-based cafe in the Boston area serving food that is good for you and good for the planet. Breakfast, lunch, dinner, smoothies, meal plans.",
+        "cuisine": "Vegan",
+        "veganOptions": true,
+        "takeOut": true,
+        "priceRange": 2
+    },
+    {
+        "name": "House of Chang",
+        "cuisine": "Chinese",
+        "veganOptions": true,
+        "priceRange": 2
+    },
+    {
+        "name": "The Cheesecake Factory",
+        "description": "Our menu has more than 250 dishes, freshly prepared and from scratch, to order, every day.",
+        "cuisine": "American and European",
+        "veganOptions": true,
+        "takeOut": true,
+        "priceRange": 3
+    }
+]
