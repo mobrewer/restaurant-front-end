@@ -12,7 +12,7 @@ export default function App() {
 	return (
 		<div className='app'>
 			<div className='header'>
-				<h1>Restaurant App</h1>
+				<h1 className='title'>Restaurant App</h1>
 				<Navbar />
 			</div>
 			<Routes>
