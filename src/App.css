@@ -49,3 +49,15 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.searchbar {
+    position: absolute;
+    top: 600px;
+    width: 50%;
+    background-color: white;
+    width: 350px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 20px;
+    border-radius: 60px;
+}

@@ -14,7 +14,7 @@ export default function SearchBar() {
     }, [search])
     return (
         <div className='searchbar'>
-            <label for='search'>Search for a restaurant:</label>
+            <label for='search'>Search for a restaurant:  </label>
             <input type='text' onChange={(e) => { setSearch(e.target.value) }} />
             <ul>
                 {results.length > 0 ?
