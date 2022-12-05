@@ -7,7 +7,9 @@ export default function SearchBar() {
     const [results, setResults] = useState([])
     useEffect(() => {
         console.log(search)
-        setResults(restaurantData.filter(res => res.name.toLowerCase().startsWith(search.toLowerCase())))
+        search !== '' ?
+            setResults(restaurantData.filter(res => res.name.toLowerCase().startsWith(search.toLowerCase())))
+            : setResults([])
         console.log(results)
     }, [search])
     return (
@@ -15,9 +17,13 @@ export default function SearchBar() {
             <label for='search'>Search for a restaurant:</label>
             <input type='text' onChange={(e) => { setSearch(e.target.value) }} />
             <ul>
-                {results.map(res => {
-                    const 
-                })}
+                {results.length > 0 ?
+                    results.map(res => {
+                        const url = `/restaurant/${res.name}`
+                        return <li><Link to={url}>{res.name}</Link></li>
+                    })
+                    : <></>
+                }
             </ul>
         </div>
     )
