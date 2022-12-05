@@ -4,9 +4,9 @@ import restaurantData from '../restaurants.json'
 
 export default function RestaurantInfo() {
     const { name } = useParams()
-    const restaurant = restaurantData.find(restaurant => restaurant.name.toLowerCase() == name.toLowerCase())
+    const restaurant = restaurantData.find(restaurant => restaurant.name.toLowerCase() === name.toLowerCase())
     // ^ this is where we will query the database instead of local JSON
-    const offers = Object.keys(restaurant).filter(key => restaurant[key] == true)
+    const offers = Object.keys(restaurant).filter(key => restaurant[key] === true)
     const offerDict = { veganOptions: 'Vegan Options', takeOut: 'Take-Out' }
     return (
         <div>

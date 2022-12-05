@@ -9,7 +9,7 @@ export default function AddRestaurant() {
     const [priceRange, setPriceRange] = useState(1)
 
     const toBoolean = (str) => {
-        return str == 'true' ? true : false
+        return str === 'true' ? true : false
     }
 
     const handleSubmit = async (e) => {

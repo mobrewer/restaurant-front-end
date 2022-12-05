@@ -52,7 +52,7 @@ body {
 
 .searchbar {
     position: absolute;
-    top: 600px;
+    top: 65%;
     width: 50%;
     background-color: white;
     width: 350px;
@@ -60,4 +60,12 @@ body {
     line-height: 35px;
     padding-left: 20px;
     border-radius: 60px;
+    border: solid red 3px;
+}
+
+.results {
+    background-color: white;
+    list-style: none;
+    border-radius: 60px;
+    border: solid red 3px;
 }

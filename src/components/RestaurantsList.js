@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import restaurantData from '../restaurants.json'
 
-export default function RestaurantsList() {
+export default function RestaurantsList({ allRestaurants }) {
+
     const [sortParam, setSortParam] = useState(null)
-    const [restaurants, setRestaurants] = useState(restaurantData)
+    const [restaurants, setRestaurants] = useState(allRestaurants)
 
     useEffect(() => {
         let sortedRestaurants
