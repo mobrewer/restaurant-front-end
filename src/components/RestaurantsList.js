@@ -15,8 +15,8 @@ export default function RestaurantsList({ setAllRestaurants, allRestaurants }) {
     useEffect(() => {
         let sortedRestaurants
         sortParam === 'low'
-            ? sortedRestaurants = allRestaurants.sort((a, b) => b.priceRange - a.priceRange)
-            : sortedRestaurants = allRestaurants.sort((a, b) => a.priceRange - b.priceRange)
+            ? sortedRestaurants = [...allRestaurants].sort((a, b) => a.priceRange - b.priceRange)
+            : sortedRestaurants = [...allRestaurants].sort((a, b) => b.priceRange - a.priceRange)
         setAllRestaurants(sortedRestaurants)
     }, [sortParam])
 
