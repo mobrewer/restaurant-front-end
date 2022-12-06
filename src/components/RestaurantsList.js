@@ -7,7 +7,7 @@ export default function RestaurantsList({ setAllRestaurants, allRestaurants }) {
 
     const [sortParam, setSortParam] = useState(null)
     const handleDelete = async (name) => {
-        const res = await axios.delete('http://localhost:4000/api/restaurants/delete/' + name)
+        const res = await axios.delete('http://damp-haze-3230.fly.dev/api/restaurants/delete/' + name)
         console.log(res)
         navigate(0)
     }
