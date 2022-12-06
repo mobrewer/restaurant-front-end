@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export default function AddRestaurant() {
     const [name, setName] = useState("")
@@ -8,6 +9,7 @@ export default function AddRestaurant() {
     const [veganOptions, setVeganOptions] = useState(true)
     const [takeOut, setTakeOut] = useState(true)
     const [priceRange, setPriceRange] = useState(1)
+    const navigate = useNavigate()
 
     const toBoolean = (str) => {
         return str === 'true' ? true : false
@@ -24,41 +26,25 @@ export default function AddRestaurant() {
             priceRange: priceRange
         }))
 
-            try {
-                const data = {
-                    name: name,
-                    description: description,
-                    cuisine: cuisine,
-                    veganOptions: veganOptions,
-                    takeOut: takeOut,
-                    priceRange: priceRange
-                }
-                console.log(data);
-              // Send a POST request to the API endpoint with the data
-              const response = await axios.post('http://localhost:4000/api/restaurants/', data);
-              // Handle the success response
-              console.log(response.data);
-            } catch (error) {
-              // Handle any errors that may occur
-              console.error(error);
+        try {
+            const data = {
+                name: name,
+                description: description,
+                cuisine: cuisine,
+                veganOptions: veganOptions,
+                takeOut: takeOut,
+                priceRange: priceRange
             }
-        // try {
-        //     let res = await fetch("https://httpbin.org/post", {
-        //         method: "POST",
-        //         body: JSON.stringify({
-        //             name: name,
-        //             description: description,
-        //             cuisine: cuisine,
-        //             veganOptions: veganOptions,
-        //             takeOut: takeOut,
-        //             priceRange: priceRange
-        //         }),
-        //     })
-        //     let resJson = await res.json()
-        //     res.status === 200 ? console.log('restaurant submitted') : console.log('something went wrong')
-        // } catch (err) {
-        //     console.log(err)
-        // }
+            console.log(data);
+            // Send a POST request to the API endpoint with the data
+            const response = await axios.post('http://localhost:4000/api/restaurants/', data);
+            // Handle the success response
+            console.log(response.data);
+            navigate(-1)
+        } catch (error) {
+            // Handle any errors that may occur
+            console.error(error);
+        }
     }
     return (
         <div>
