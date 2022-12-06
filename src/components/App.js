@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
 import RestaurantInfo from './RestaurantInfo'
 import RestaurantsList from './RestaurantsList'
 import AddRestaurant from './AddRestaurant'
 import About from './About'
 import Navbar from './Navbar'
 import axios from 'axios'
-import '../app.css'
+import '../App.css'
+import SearchBar from './SearchBar'
 
 export default function App() {
 	const [allRestaurants, setAllRestaurants] = useState([])
@@ -22,7 +22,7 @@ export default function App() {
 				}
 			})
 	}, [])
-
+console.log(allRestaurants);
 	return (
 		<div className='app'>
 			<div className='header'>
@@ -30,9 +30,9 @@ export default function App() {
 				<Navbar />
 			</div>
 			<Routes>
-				<Route path='/' element={<Home />} />
+				<Route path='/' element={<SearchBar allRestaurants={allRestaurants}/>} />
 				<Route path='/about' element={<About />} />
-				<Route path='/all' element={<RestaurantsList allRestaurants={allRestaurants} />} />
+				<Route path='/all' element={<RestaurantsList setAllRestaurants= {setAllRestaurants} allRestaurants={allRestaurants} />} />
 				<Route path='/restaurant/:name' element={<RestaurantInfo />} />
 				<Route path='/add-restaurant' element={<AddRestaurant />} />
 			</Routes>

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import restaurantData from '../restaurants.json'
 import { Link } from 'react-router-dom'
 
-export default function SearchBar() {
+export default function SearchBar({allRestaurants}) {
     const [search, setSearch] = useState('')
     const [results, setResults] = useState([])
     useEffect(() => {
         search !== '' ?
-            setResults(restaurantData.filter(res => res.name.toLowerCase().startsWith(search.toLowerCase())))
+            setResults(allRestaurants.filter(res => res.name.toLowerCase().startsWith(search.toLowerCase())))
             : setResults([])
     }, [search])
     return (

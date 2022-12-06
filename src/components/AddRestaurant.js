@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 export default function AddRestaurant() {
     const [name, setName] = useState("")
@@ -22,6 +23,25 @@ export default function AddRestaurant() {
             takeOut: takeOut,
             priceRange: priceRange
         }))
+
+            try {
+                const data = {
+                    name: name,
+                    description: description,
+                    cuisine: cuisine,
+                    veganOptions: veganOptions,
+                    takeOut: takeOut,
+                    priceRange: priceRange
+                }
+                console.log(data);
+              // Send a POST request to the API endpoint with the data
+              const response = await axios.post('http://localhost:4000/api/restaurants/', data);
+              // Handle the success response
+              console.log(response.data);
+            } catch (error) {
+              // Handle any errors that may occur
+              console.error(error);
+            }
         // try {
         //     let res = await fetch("https://httpbin.org/post", {
         //         method: "POST",
