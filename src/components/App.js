@@ -8,6 +8,7 @@ import Navbar from './Navbar'
 import axios from 'axios'
 import '../App.css'
 import SearchBar from './SearchBar'
+import Home from'./Home'
 
 export default function App() {
 	const [allRestaurants, setAllRestaurants] = useState([])
