@@ -13,7 +13,7 @@ import Home from'./Home'
 export default function App() {
 	const [allRestaurants, setAllRestaurants] = useState([])
 	useEffect(() => {
-		axios.get('http://damp-haze-3230.fly.dev/api/restaurants')
+		axios.get('https://damp-haze-3230.fly.dev/api/restaurants')
 			.then((res) => {
 				console.log(res.data)
 				setAllRestaurants(res.data)

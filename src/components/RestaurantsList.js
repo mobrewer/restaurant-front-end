@@ -7,7 +7,7 @@ export default function RestaurantsList({ setAllRestaurants, allRestaurants }) {
 
     const [sortParam, setSortParam] = useState(null)
     const handleDelete = async (name) => {
-        const res = await axios.delete('http://damp-haze-3230.fly.dev/api/restaurants/delete/' + name)
+        const res = await axios.delete('https://damp-haze-3230.fly.dev/api/restaurants/delete/' + name)
         console.log(res)
         navigate(0)
     }
@@ -26,14 +26,14 @@ export default function RestaurantsList({ setAllRestaurants, allRestaurants }) {
             <Link className='add' to={'/add-restaurant'}>
                 <button>Add your restaurant</button>
             </Link>
-            <select name="sortParam" onChange={(e) => setSortParam(e.target.value)}>
-                <option value="none" selected disabled hidden>Sort by price:</option>
+            <select name="sortParam" defaultValue={'none'} onChange={(e) => setSortParam(e.target.value)}>
+                <option value="none" disabled hidden>Sort by price:</option>
                 <option value="low">{`Price (low to high)`}</option>
                 <option value="high">{`Price (high to low)`}</option>
             </select>
             <ul>
-                {allRestaurants.map(restaurant => {
-                    return <li>
+                {allRestaurants.map((restaurant, id) => {
+                    return <li key={id}>
                         {restaurant.name} - {restaurant.cuisine} - {'$'.repeat(restaurant.priceRange) + '   '}
                         <button value={restaurant.name} onClick={(e) => handleDelete(e.target.value)}>delete</button>
                     </li>

@@ -14,7 +14,7 @@ export default function RestaurantInfo() {
             <h4>Cuisine: {restaurant.cuisine}</h4>
             <h4>Price Range: {'$'.repeat(restaurant.priceRange)}</h4>
             <h4>Offers:</h4>
-            <ul>{offers.map(offer => <li key={offer}>{offerDict[offer]}</li>)}</ul>
+            <ul>{offers.map((offer,id) => <li key={id}>{offerDict[offer]}</li>)}</ul>
             <p>{restaurant.description}</p>
         </div>
     )

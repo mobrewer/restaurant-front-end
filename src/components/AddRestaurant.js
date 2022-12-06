@@ -37,7 +37,7 @@ export default function AddRestaurant() {
             }
             console.log(data);
             // Send a POST request to the API endpoint with the data
-            const response = await axios.post('http://damp-haze-3230.fly.dev/api/restaurants/', data);
+            const response = await axios.post('https://damp-haze-3230.fly.dev/api/restaurants/', data);
             // Handle the success response
             console.log(response.data);
             navigate(-1)

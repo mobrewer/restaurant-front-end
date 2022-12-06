@@ -12,13 +12,13 @@ export default function SearchBar({allRestaurants}) {
     }, [search])
     return (
         <div className='searchbar'>
-            <label for='search'>Search for a restaurant:  </label>
+            <label>Search for a restaurant:  </label>
             <input type='text' onChange={(e) => { setSearch(e.target.value) }} />
             {results.length > 0
                 ? <ul className='results'>
-                    {results.map(res => {
+                    {results.map((res,id) => {
                         const url = `/restaurant/${res.name}`
-                        return <li><Link to={url}>{res.name}</Link></li>
+                        return <li key = {id}><Link to={url}>{res.name}</Link></li>
                     })}
                 </ul>
                 : <></>}
